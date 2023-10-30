@@ -15,10 +15,7 @@ class JSONServer(HandleRequests):
         try:
             view.get(self, url)
         except AttributeError:
-            return self.response(
-                "No view for that route",
-                status.HTTP_404_CLIENT_ERROR_RESOURCE_NOT_FOUND.value,
-            )
+            return self.response("No view for that route", status.HTTP_404_CLIENT_ERROR_RESOURCE_NOT_FOUND.value)
 
     def do_PUT(self):
         url = self.parse_url(self.path)
