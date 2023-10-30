@@ -49,3 +49,11 @@ INSERT INTO `Sizes` (id, carets, price) VALUES
 (null, 1.5, 1997),
 (null, 2, 3638);
 
+INSERT INTO `Orders` (id, metalId, styleId, sizeId) VALUES
+(null, 1, 1, 1),
+(null, 2, 2, 2),
+(null, 3, 3, 3),
+(null, 1, 2, 3),
+(null, 3, 1, 2),
+(null, 2, 3, 1);
+

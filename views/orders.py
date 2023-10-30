@@ -18,10 +18,10 @@ class OrdersView:
         if url["pk"] != 0:
             sql += " WHERE o.id = ?"
             query_results = db_get_single(sql, url["pk"])
-            serialized_metals = json.dumps(dict(query_results))
+            serialized_orders = json.dumps(dict(query_results))
         else:
             query_results = db_get_all(sql, url["pk"])
-            metals = [dict(row) for row in query_results]
-            serialized_metals = json.dumps(dict(metals))
+            orders = [dict(row) for row in query_results]
+            serialized_orders = json.dumps(orders)
 
-        return handler.response(serialized_metals, status.HTTP_200_SUCCESS.value)
+        return handler.response(serialized_orders, status.HTTP_200_SUCCESS.value)
