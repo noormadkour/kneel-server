@@ -13,7 +13,7 @@ class SizesView:
         Returns:
             response from handler        
         """
-        sql = "SELECT sz.id, sz.style, sz.price FROM Sizes sz"
+        sql = "SELECT sz.id, sz.carets, sz.price FROM Sizes sz"
 
         if url["pk"] != 0:
             sql += " WHERE sz.id = ?"
@@ -22,6 +22,6 @@ class SizesView:
         else:
             query_results = db_get_all(sql, url["pk"])
             sizes = [dict(row) for row in query_results]
-            serialized_sizes = json.dumps(dict(sizes))
+            serialized_sizes = json.dumps(sizes)
 
         return handler.response(serialized_sizes, status.HTTP_200_SUCCESS.value)

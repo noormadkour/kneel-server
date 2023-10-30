@@ -6,12 +6,12 @@ from repository import db_get_all, db_get_single
 
 class MetalsView:
     def get(self, handler, url):
-        """ Method for handling HTTP request to GET all metals @ /metals
+        """Method for handling HTTP request to GET all metals @ /metals
         Args:
             handler: http handler to handle the request and return a response
             url: will be indexed into for query_params, and pk
         Returns:
-            response from handler        
+            response from handler
         """
         sql = "SELECT m.id, m.metal, m.price FROM Metals m"
 
@@ -22,6 +22,6 @@ class MetalsView:
         else:
             query_results = db_get_all(sql, url["pk"])
             metals = [dict(row) for row in query_results]
-            serialized_metals = json.dumps(dict(metals))
+            serialized_metals = json.dumps(metals)
 
         return handler.response(serialized_metals, status.HTTP_200_SUCCESS.value)

@@ -21,7 +21,7 @@ class StylesView:
             serialized_styles = json.dumps(dict(query_results))
         else:
             query_results = db_get_all(sql, url["pk"])
-            metals = [dict(row) for row in query_results]
-            serialized_styles = json.dumps(dict(metals))
+            styles = [dict(row) for row in query_results]
+            serialized_styles = json.dumps(styles)
 
         return handler.response(serialized_styles, status.HTTP_200_SUCCESS.value)
