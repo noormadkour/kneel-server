@@ -25,3 +25,12 @@ class StylesView:
             serialized_styles = json.dumps(styles)
 
         return handler.response(serialized_styles, status.HTTP_200_SUCCESS.value)
+    
+    def add(self, handler, data):
+        return handler.response("", status.HTTP_405_UNSUPPORTED_METHOD.value)
+    
+    def update(self, handler, data, pk):
+        return handler.response("", status.HTTP_405_UNSUPPORTED_METHOD.value)
+    
+    def delete(self, handler, pk):
+        return handler.response("", status.HTTP_405_UNSUPPORTED_METHOD.value)

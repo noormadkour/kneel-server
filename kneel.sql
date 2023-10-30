@@ -57,3 +57,11 @@ INSERT INTO `Orders` (id, metalId, styleId, sizeId) VALUES
 (null, 3, 1, 2),
 (null, 2, 3, 1);
 
+SELECT  
+    o.id,
+    o.metalId,
+    o.styleId,
+    o.sizeId,
+    o.timestamp
+FROM Orders o
+Where o.metalId = 1;
