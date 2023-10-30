@@ -1,0 +1,13 @@
+{
+    "saveAndRunExt": {
+        "commands": [
+            {
+                "match": "\\.(py$)",
+                "isShellCommand": false,
+                "cmd": ""
+            }
+        ]
+    }
+}
+
+// "cmd": "workbench.action.debug.restart"
